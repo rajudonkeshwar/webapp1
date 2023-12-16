@@ -24,7 +24,7 @@ pipeline {
             steps {
 			
                 echo 'DEPLOY THE CODE TO THE TOMCAT APPLICATION'
-		deploy adapters: [tomcat9(credentialsId: 'tomcat-application', path: '', url: 'http://54.82.74.148:8081/')], contextPath: 'facebook', war: '**/*.war'
+		deploy adapters: [tomcat9(credentialsId: 'tomcat', path: '', url: 'http://54.82.74.148:8081/')], contextPath: 'gaming-application', war: '**/*.war'
 				
             }
         }		
