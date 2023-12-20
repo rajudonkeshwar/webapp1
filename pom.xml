@@ -7,6 +7,11 @@
     <artifactId>mywebapp</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
+    
+	<properties>
+		<docker.image.prefix>kammana</docker.image.prefix>
+		<sonar.host.url>http://44.204.12.178:9000/</sonar.host.url>
+	</properties>
 
     <build>
         <plugins>
