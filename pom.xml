@@ -10,9 +10,25 @@
     <properties>
 		<docker.image.prefix>kammana</docker.image.prefix>
 		<sonar.host.url>http://44.203.148.181:9000/</sonar.host.url>
-	</properties>
+    </properties>
+
+
+	
+<distributionManagement>
+	<snapshotRepository>
+		<id>nexusRepo</id>
+		<url>http://52.91.118.117:8081/repository/artifact-snapshot/</url>
+	</snapshotRepository>
+		
+	<repository>
+		<id>nexusRepo</id>
+		<url>http://52.91.118.117:8081/repository/artifact-relesed/</url>
+	</repository>
+</distributionManagement>
     
 
+
+	
     <build>
         <plugins>
             <plugin>
