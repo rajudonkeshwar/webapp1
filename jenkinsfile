@@ -1,34 +1,60 @@
 pipeline {
-    agent any
+	agent any
 
-    stages {
-	
-        stage('CLONE') {
-            steps {
-			
-                echo 'CLONE THE CODE FROM GITHUB'
-				git branch: 'main', url: 'https://github.com/rajudonkeshwar/webapp1.git'
-            }
-        }
-			
-	stage('BUILD') {
-            steps {
-			
-                echo 'BUILD THE CODE USING MAVEN'
-				sh 'mvn clean install'
+	tools {
+        jdk 'java-1.8'
+    	}
+
+
+
+	stages{	
+		stage('cloning from github') {
+	            steps {
+	                echo 'cloning of code from git hub'
+			git branch: 'main', url: 'https://github.com/rajudonkeshwar/webapp1.git'
+	            }
+	        }
 				
-            }
-        }
-			
-	stage('DEPLOY') {
-            steps {
-			
-                echo 'DEPLOY THE CODE TO THE TOMCAT APPLICATION'
-		deploy adapters: [tomcat9(credentialsId: 'tomcat', path: '', url: 'http://54.82.74.148:8081/')], contextPath: 'gaming-application', war: '**/*.war'
+		stage('FINDING THE JAVA VERSION') {
+	            steps {
+	                echo 'FIND THE JAVA VERSION'
+			sh 'java -version'
+					
+	            }
+	        }
 				
-            }
-        }		
-    }
+	        stage('packaging the code using maven tool') {
+	            steps {
+	                echo 'packaging the code using maven tool'
+			sh 'mvn clean package'
+					
+	            }
+	        }
+			
+		stage('testing the code using sonar tool') {
+	            steps {
+	                echo 'testing the code using sonar tool'
+			sh 'mvn sonar:sonar install'
+					
+	            }
+	        }
+			
+		stage('upload the code in to nexus tool') {
+	            steps {
+	                echo 'upload the code in to nexus tool'
+			sh 'mvn deploy'
+					
+	            }
+	        }
+			
+	        stage('deploying in to apache-tomcat-server') {
+	            steps {
+	                echo 'deploying the code to the tomcat server'
+			deploy adapters: [tomcat9(credentialsId: 'tomcat', path: '', url: 'http://34.227.92.22:8081/')], contextPath: 'webapp1	', war: '**/*.war'
+	            }
+	        }	
+	    }
+}
 }
 
 
