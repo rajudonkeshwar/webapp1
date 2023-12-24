@@ -9,20 +9,20 @@
     <packaging>war</packaging>
     <properties>
 		<docker.image.prefix>kammana</docker.image.prefix>
-		<sonar.host.url>http://44.203.148.181:9000/</sonar.host.url>
+		<sonar.host.url>http://100.26.152.130:9000/</sonar.host.url>
     </properties>
 
 
 	
 <distributionManagement>
 	<snapshotRepository>
-		<id>nexusRepo</id>
-		<url>http://52.91.118.117:8081/repository/artifact-snapshot/</url>
+		<id>rajub12</id>
+		<url>http://35.175.126.88:8081/repository/snopshot-version/</url>
 	</snapshotRepository>
 		
 	<repository>
-		<id>nexusRepo</id>
-		<url>http://52.91.118.117:8081/repository/artifact-relesed/</url>
+		<id>rajub12</id>
+		<url>http://35.175.126.88:8081/repository/released-version/</url>
 	</repository>
 </distributionManagement>
     
