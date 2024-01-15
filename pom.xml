@@ -20,12 +20,12 @@
 	<distributionManagement>
 		<snapshotRepository>
 			<id>rajub12</id>
-			<url>http://100.24.33.33:8081/repository/webapp1-snapshot/</url>
+			<url>http://54.91.116.26:8081/repository/webapp1-snapshot/</url>
 		</snapshotRepository>
 			
 		<repository>
 			<id>rajub12</id>
-			<url>http://100.24.33.33:8081/repository/webapp1-release/</url>
+			<url>http://54.91.116.26:8081/repository/webapp1-release/</url>
 		</repository>
 	</distributionManagement>
 
