@@ -7,25 +7,7 @@
     <artifactId>mywebapp</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
-    <properties>
-		<docker.image.prefix>kammana</docker.image.prefix>
-		<sonar.host.url>http://54.84.125.93:9000/</sonar.host.url>
-    </properties>
 
-
-	
-<distributionManagement>
-	<snapshotRepository>
-		<id>rajub12</id>
-		<url>http://3.87.6.106:8081/repository/webapp1-snapshot/</url>
-	</snapshotRepository>
-		
-	<repository>
-		<id>rajub12</id>
-		<url>http://3.87.6.106:8081/repository/webapp1-release/</url>
-	</repository>
-</distributionManagement>
-    
 
 
 	
