@@ -38,7 +38,7 @@ pipeline {
 		stage('upload the code in to nexus tool') {
 	            steps {
 	                echo 'upload the code in to nexus tool'
-			sh 'mvn deploy'
+			sh 'mvn clean deploy'
 					
 	            }
 	        }
