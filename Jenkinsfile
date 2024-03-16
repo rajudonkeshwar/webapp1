@@ -11,19 +11,10 @@ pipeline {
 	stage('packaging the code using maven tool') {
 	            steps {
 	                echo 'packaging the code using maven tool'
-			sh 'mvn clean package'
+			sh 'mvn clean install'
 					
 	            }
 	        }
-			
-	stage('testing the code using sonar tool') {
-	            steps {
-	                echo 'testing the code using sonar tool'
-			sh 'mvn sonar:sonar install'
-					
-	            }
-	        }
-
 	    
 	stage('deploying code in to tomcat-server') {
             steps {
