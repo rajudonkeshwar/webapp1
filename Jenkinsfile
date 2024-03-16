@@ -7,20 +7,12 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/rajudonkeshwar/webapp1.git'
             }
 	}	
-	stage('building code usig maven tool') {
-            steps {
-                       
-                echo 'packaging the code using maven tool'
-				sh 'mvn clean install'
-				
-            }
-	}
 
 	stage('testing the code using sonar') {
             steps {
                        
                 echo 'testing the code using sonar'
-				sh 'mvn clean sonar:sonar'
+				sh 'mvn clean sonar:sonar install'
 				
             }
 	}
