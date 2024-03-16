@@ -19,13 +19,13 @@
 	
 	<distributionManagement>
 		<snapshotRepository>
-			<id>rajub12</id>
-			<url>http://18.207.195.52:8081/repository/snapshot-vrsn/</url>
+			<id>nexusRepo</id>
+			<url>http://34.229.184.147:8081/repository/maven-snapshots/</url>
 		</snapshotRepository>
 			
 		<repository>
-			<id>rajub12</id>
-			<url>http://18.207.195.52:8081/repository/released-version/</url>
+			<id>nexusRepo</id>
+			<url>http://34.229.184.147:8081/repository/maven-releases/</url>
 		</repository>
 	</distributionManagement>
 
